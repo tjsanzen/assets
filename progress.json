@@ -1,0 +1,24 @@
+{
+  "current": {
+    "date": "2025-09-07",
+    "lat": 42.413637,
+    "lng": -3.242682,
+    "label": "Tosantos · Sep 7",
+    "photo": "https://raw.githubusercontent.com/tjsanzen/assets/main/anna-face.png",
+    "progress_km": 210.4
+  },
+  "days": [
+    {
+      "date": "2025-09-07",
+      "start": {"lat": 42.449434, "lng": -3.027711, "label": "Grañon"},
+      "end":   {"lat": 42.413637, "lng": -3.242682, "label": "Tosantos"},
+      "progress_km": 210.4
+    },
+    {
+      "date": "2025-09-06",
+      "start": {"lat": 42.414838, "lng": -2.730880, "label": "Nájera"},
+      "end":   {"lat": 42.449434, "lng": -3.027711, "label": "Grañon"},
+      "progress_km": 192.7
+    }
+  ]
+}

@@ -1,13 +1,19 @@
 {
   "current": {
-    "date": "2025-09-07",
-    "lat": 42.413637,
-    "lng": -3.242682,
-    "label": "Tosantos · Sep 7",
+    "date": "2025-09-08",
+    "lat": 42.369572,
+    "lng": -3.478270,
+    "label": "Agés · Sep 8",
     "photo": "https://raw.githubusercontent.com/tjsanzen/assets/main/anna-face.png",
-    "progress_km": 238.8
+    "progress_km": 261.5
   },
   "days": [
+    {
+      "date": "2025-09-08",
+      "start": {"lat": 42.413637, "lng": -3.242682, "label": "Tosantos"},
+      "end":   {"lat": 42.369572, "lng": -3.478270, "label": "Agés"},
+      "progress_km": 261.5
+    },
     {
       "date": "2025-09-07",
       "start": {"lat": 42.449434, "lng": -3.027711, "label": "Grañon"},

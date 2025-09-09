@@ -1,13 +1,19 @@
 {
   "current": {
-    "date": "2025-09-08",
-    "lat": 42.369572,
-    "lng": -3.478270,
-    "label": "Agés · Sep 8",
+    "date": "2025-09-09",
+    "lat": 42.342468,
+    "lng": -3.699678,
+    "label": "Burgos · Sep 9",
     "photo": "https://raw.githubusercontent.com/tjsanzen/assets/main/anna-face.png",
-    "progress_km": 261.5
+    "progress_km": 284
   },
   "days": [
+    {
+      "date": "2025-09-09",
+      "start": {"lat": 42.369572, "lng": -3.478270, "label": "Agés"},
+      "end":   {"lat": 42.342468, "lng": -3.699678, "label": "Burgos"},
+      "progress_km": 284
+    },
     {
       "date": "2025-09-08",
       "start": {"lat": 42.413637, "lng": -3.242682, "label": "Tosantos"},

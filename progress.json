@@ -9,6 +9,24 @@
   },
   "days": [
     {
+      "date": "2025-09-15",
+      "start": {"lat": 42.338971, "lng": -4.603397, "label": "Carrión de los Condes"},
+      "end":   {"lat": 42.338971, "lng": -4.603397, "label": "Unknown"},
+      "progress_km": 370
+    },
+    {
+      "date": "2025-09-14",
+      "start": {"lat": 42.267971, "lng": -4.409325, "label": "Frómista"},
+      "end":   {"lat": 42.338971, "lng": -4.603397, "label": "Carrión de los Condes"},
+      "progress_km": 367.7
+    },
+    {
+      "date": "2025-09-13",
+      "start": {"lat": 42.287935, "lng": -4.140077, "label": "Castrojeriz"},
+      "end":   {"lat": 42.267971, "lng": -4.409325, "label": "Frómista"},
+      "progress_km": 349
+    },
+    {
       "date": "2025-09-12",
       "start": {"lat": 42.338599, "lng": -3.926773, "label": "Hornillos del Camino"},
       "end":   {"lat": 42.287935, "lng": -4.140077, "label": "Castrojeriz"},
@@ -70,40 +88,40 @@
     },
     {
       "date": "2025-09-02",
-      "start": {"lat": 42.414838, "lng": -2.730880, "label": "Nájera"},
-      "end":   {"lat": 42.449434, "lng": -3.027711, "label": "Grañon"},
-      "progress_km": 218.4
+      "start": {"lat": 42.675325, "lng": -1.891334, "label": "Cirauqui"},
+      "end":   {"lat": 42.629477, "lng": -2.105382, "label": "Villamayor de Monjardín"},
+      "progress_km": 121.2
     }
     ,
     {
       "date": "2025-09-01",
-      "start": {"lat": 42.414838, "lng": -2.730880, "label": "Nájera"},
-      "end":   {"lat": 42.449434, "lng": -3.027711, "label": "Grañon"},
-      "progress_km": 218.4
+      "start": {"lat": 42.817521, "lng": -1.651396, "label": "Pamplona"},
+      "end":   {"lat": 42.675325, "lng": -1.891334, "label": "Cirauqui"},
+      "progress_km": 97.7
     },
     {
       "date": "2025-08-31",
-      "start": {"lat": 42.414838, "lng": -2.730880, "label": "Nájera"},
-      "end":   {"lat": 42.449434, "lng": -3.027711, "label": "Grañon"},
-      "progress_km": 218.4
+      "start": {"lat": 42.931465, "lng": -1.504797, "label": "Zubiri"},
+      "end":   {"lat": 42.817521, "lng": -1.651396, "label": "Pamplona"},
+      "progress_km": 66.1
     },
     {
       "date": "2025-08-30",
-      "start": {"lat": 42.414838, "lng": -2.730880, "label": "Nájera"},
-      "end":   {"lat": 42.449434, "lng": -3.027711, "label": "Grañon"},
-      "progress_km": 218.4
+      "start": {"lat": 43.009711, "lng": -1.319478, "label": "Roncesvalles"},
+      "end":   {"lat": 42.931465, "lng": -1.504797, "label": "Zubiri"},
+      "progress_km": 45.7
     },
     {
       "date": "2025-08-29",
-      "start": {"lat": 42.414838, "lng": -2.730880, "label": "Nájera"},
-      "end":   {"lat": 42.449434, "lng": -3.027711, "label": "Grañon"},
-      "progress_km": 218.4
+      "start": {"lat": 43.108769, "lng": -1.239134, "label": "Orrison"},
+      "end":   {"lat": 43.009711, "lng": -1.319478, "label": "Roncesvalles"},
+      "progress_km": 24.2
     },
     {
       "date": "2025-08-28",
-      "start": {"lat": 42.414838, "lng": -2.730880, "label": "Nájera"},
-      "end":   {"lat": 42.449434, "lng": -3.027711, "label": "Grañon"},
-      "progress_km": 218.4
+      "start": {"lat": 43.162944, "lng": -1.238015, "label": "Saint-Jean-Pied-de-Port"},
+      "end":   {"lat": 43.108769, "lng": -1.239134, "label": "Orrison"},
+      "progress_km": 7.4
     }
   ]
 }

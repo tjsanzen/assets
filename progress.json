@@ -1,13 +1,19 @@
 {
   "current": {
-    "date": "2025-09-09",
+    "date": "2025-09-010",
     "lat": 42.342468,
     "lng": -3.699678,
-    "label": "Burgos · Sep 9",
+    "label": "Burgos · Sep 10",
     "photo": "https://raw.githubusercontent.com/tjsanzen/assets/main/anna-face.png",
     "progress_km": 284
   },
   "days": [
+    {
+      "date": "2025-09-10",
+      "start": {"lat": 42.342468, "lng": -3.699678, "label": "Burgos"},
+      "end":   {"lat": 42.342468, "lng": -3.699678, "label": "Burgos"},
+      "progress_km": 284
+    },
     {
       "date": "2025-09-09",
       "start": {"lat": 42.369572, "lng": -3.478270, "label": "Agés"},

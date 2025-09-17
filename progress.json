@@ -1,18 +1,30 @@
 {
   "current": {
     "date": "2025-09-12",
-    "lat": 42.338971,
-    "lng": -4.603397,
-    "label": "Carrión de los Condes - Sep 14",
+    "lat": 42.594948,
+    "lng": -5.582000,
+    "label": "León - Sep 17",
     "photo": "https://raw.githubusercontent.com/tjsanzen/assets/main/anna-face.png",
-    "progress_km": 304.5
+    "progress_km": 462.2
   },
   "days": [
     {
+      "date": "2025-09-16",
+      "start": {"lat": 42.422758, "lng": -5.218061, "label": "El Burgo Ranero"},
+      "end":   {"lat": 42.594948, "lng": -5.582000, "label": "León"},
+      "progress_km": 462.2
+    },
+    {
+      "date": "2025-09-16",
+      "start": {"lat": 42.360484, "lng": -4.925978, "label": "Moratinos"},
+      "end":   {"lat": 42.422758, "lng": -5.218061, "label": "El Burgo Ranero"},
+      "progress_km": 424.7
+    },
+    {
       "date": "2025-09-15",
       "start": {"lat": 42.338971, "lng": -4.603397, "label": "Carrión de los Condes"},
-      "end":   {"lat": 42.338971, "lng": -4.603397, "label": "Unknown"},
-      "progress_km": 370
+      "end":   {"lat": 42.360484, "lng": -4.925978, "label": "Moratinos"},
+      "progress_km": 397.4
     },
     {
       "date": "2025-09-14",

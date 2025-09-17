@@ -1,4 +1,8 @@
 { "towns": [
-  { "name":"Saint-Jean-Pied-de-Port", "lat":43.1631, "lng":-1.2370 },
-  { "name":"Orisson", "lat":43.1529, "lng":-1.2619 }
+  { "name":"Frómista", "lat":42.267526, "lng":-4.407093 },
+  { "name":"Población de Campos", "lat":42.269755, "lng":-4.447449 },
+  { "name":"Revenga de Campos", "lat":42.284115, "lng":-4.483636 },
+  { "name":"Villarmentero de Campos", "lat":42.297516, "lng":-4.499855 },
+  { "name":"Villalcázar de Sirga", "lat":42.316711, "lng":-4.541752 },
+  { "name":"Carrión de los Condes", "lat":42.339636, "lng":-4.602453 }
 ]}

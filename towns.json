@@ -1,0 +1,4 @@
+{ "towns": [
+  { "name":"Saint-Jean-Pied-de-Port", "lat":43.1631, "lng":-1.2370 },
+  { "name":"Orisson", "lat":43.1529, "lng":-1.2619 }
+]}

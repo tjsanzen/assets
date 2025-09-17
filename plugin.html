@@ -114,8 +114,11 @@ try{
         L.circleMarker([t.lat,t.lng],{
           radius:4, weight:2, color:'#333', fillColor:'#fff', fillOpacity:1
         })
-        .bindTooltip(t.name,{permanent:true, direction:'top', offset:[0,-8], opacity:0.9})
+       .bindTooltip(t.name,{permanent:false, direction:'top', offset:[0,-8], opacity:0.9})
         .addTo(map);
+
+
+        
       });
     }catch{}
 

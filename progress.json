@@ -1,14 +1,26 @@
 {
   "current": {
     "date": "2025-09-19",
-    "lat": 42.456877,
-    "lng": -6.060140,
-    "label": "Astorga - Sep 19",
+    "lat": 42.537485,
+    "lng": -6.520912,
+    "label": "Molinaseca - Sep 21",
     "photo": "https://raw.githubusercontent.com/tjsanzen/assets/main/anna-face.png",
-    "progress_km": 511.8
+    "progress_km": 556.2
   },
   "days": [
-      {
+    {
+      "date": "2025-09-21",
+      "start": {"lat": 42.481791, "lng": -6.284822, "label": "Rabanal del Camino"},
+      "end":   {"lat": 42.537485, "lng": -6.520912, "label": "Molinaseca"},
+      "progress_km": 556.2
+    },
+    {
+      "date": "2025-09-20",
+      "start": {"lat": 42.456877, "lng": -6.060140, "label": "Astorga"},
+      "end":   {"lat": 42.481791, "lng": -6.284822, "label": "Rabanal del Camino"},
+      "progress_km": 531.5
+    },  
+    {
       "date": "2025-09-19",
       "start": {"lat": 42.462351, "lng": -5.884075, "label": "Hospital de Órbigo"},
       "end":   {"lat": 42.456877, "lng": -6.060140, "label": "Astorga"},

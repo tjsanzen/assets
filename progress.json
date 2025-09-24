@@ -1,13 +1,73 @@
 {
   "current": {
-    "date": "2025-09-19",
-    "lat": 42.537485,
-    "lng": -6.520912,
-    "label": "Molinaseca - Sep 21",
+    "date": "2025-09-24",
+    "lat": 42.707823,
+    "lng": -7.043963,
+    "label": "O Cebreiro - Sep 24",
     "photo": "https://raw.githubusercontent.com/tjsanzen/assets/main/anna-face.png",
     "progress_km": 556.2
   },
   "days": [
+   {
+      "date": "2025-10-01",
+      "start": {"lat": 42.917072, "lng": -8.332210, "label": "Santa Irene"},
+      "end":   {"lat": 42.872776, "lng": -8.547002, "label": "Santiago de Compostela"},
+      "progress_km": 777
+    },
+    {
+      "date": "2025-09-30",
+      "start": {"lat": 42.938425, "lng": -8.154983, "label": "Ribadiso"},
+      "end":   {"lat": 42.917072, "lng": -8.332210, "label": "Santa Irene"},
+      "progress_km": 754.5
+    },
+    {
+      "date": "2025-09-29",
+      "start": {"lat": 42.878565, "lng": -7.914948, "label": "Ponte Campaña"},
+      "end":   {"lat": 42.938425, "lng": -8.154983, "label": "Ribadiso"},
+      "progress_km": 735.4
+    },
+    {
+      "date": "2025-09-28",
+      "start": {"lat": 42.825330, "lng": -7.696141, "label": "Gonzar"},
+      "end":   {"lat": 42.878565, "lng": -7.914948, "label": "Ponte Campaña"},
+      "progress_km": 714
+    },
+    {
+      "date": "2025-09-27",
+      "start": {"lat": 42.518393, "lng": -7.648482, "label": "O Mosteiro"},
+      "end":   {"lat": 42.825330, "lng": -7.696141, "label": "Gonzar"},
+      "progress_km": 692.5
+    },
+    {
+      "date": "2025-09-26",
+      "start": {"lat": 42.755366, "lng": -7.241319, "label": "Triacastela"},
+      "end":   {"lat": 42.518393, "lng": -7.648482, "label": "O Mosteiro"},
+      "progress_km": 667
+    },
+    {
+      "date": "2025-09-25",
+      "start": {"lat": 42.707823, "lng": -7.043963, "label": "O Cebreiro"},
+      "end":   {"lat": 42.755366, "lng": -7.241319, "label": "Triacastela"},
+      "progress_km": 636.8
+    },
+    {
+      "date": "2025-09-24",
+      "start": {"lat": 42.649361, "lng": -6.880795, "label": "Trabadelo"},
+      "end":   {"lat": 42.707823, "lng": -7.043963, "label": "O Cebreiro"},
+      "progress_km": 615.7
+    },
+    {
+      "date": "2025-09-23",
+      "start": {"lat": 42.616423, "lng": -6.764902, "label": "Valtuille de Arriba"},
+      "end":   {"lat": 42.649361, "lng": -6.880795, "label": "Trabadelo"},
+      "progress_km": 597.2
+    },
+    {
+      "date": "2025-09-22",
+      "start": {"lat": 42.537485, "lng": -6.520912, "label": "Molinaseca"},
+      "end":   {"lat": 42.616423, "lng": -6.764902, "label": "Valtuille de Arriba"},
+      "progress_km": 583.2
+    },
     {
       "date": "2025-09-21",
       "start": {"lat": 42.481791, "lng": -6.284822, "label": "Rabanal del Camino"},

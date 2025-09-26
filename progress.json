@@ -1,11 +1,11 @@
 {
   "current": {
-    "date": "2025-09-24",
-    "lat": 42.707823,
-    "lng": -7.043963,
-    "label": "O Cebreiro - Sep 24",
+    "date": "2025-09-25",
+    "lat": 42.768225,
+    "lng": -7.255424,
+    "label": "A Balsa - Sep 25",
     "photo": "https://raw.githubusercontent.com/tjsanzen/assets/main/anna-face.png",
-    "progress_km": 556.2
+    "progress_km": 637.9
   },
   "days": [
    {
@@ -40,15 +40,15 @@
     },
     {
       "date": "2025-09-26",
-      "start": {"lat": 42.755366, "lng": -7.241319, "label": "Triacastela"},
+      "start": {"lat": 42.768225, "lng": -7.255424, "label": "A Balsa"},
       "end":   {"lat": 42.518393, "lng": -7.648482, "label": "O Mosteiro"},
       "progress_km": 667
     },
     {
       "date": "2025-09-25",
       "start": {"lat": 42.707823, "lng": -7.043963, "label": "O Cebreiro"},
-      "end":   {"lat": 42.755366, "lng": -7.241319, "label": "Triacastela"},
-      "progress_km": 636.8
+      "end":   {"lat": 42.768225, "lng": -7.255424, "label": "A Balsa"},
+      "progress_km": 637.9
     },
     {
       "date": "2025-09-24",

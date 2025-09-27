@@ -1,8 +1,8 @@
 {
   "current": {
     "date": "2025-09-26",
-    "lat": 42.518393,
-    "lng": -7.648482,
+    "lat": 42.767692,
+    "lng": -7.451236,
     "label": "O Mosteiro - Sep 26",
     "photo": "https://raw.githubusercontent.com/tjsanzen/assets/main/anna-face.png",
     "progress_km": 667
@@ -34,14 +34,14 @@
     },
     {
       "date": "2025-09-27",
-      "start": {"lat": 42.518393, "lng": -7.648482, "label": "O Mosteiro"},
+      "start": {"lat": 42.767692, "lng": -7.451236, "label": "O Mosteiro"},
       "end":   {"lat": 42.825330, "lng": -7.696141, "label": "Gonzar"},
       "progress_km": 692.5
     },
     {
       "date": "2025-09-26",
       "start": {"lat": 42.768225, "lng": -7.255424, "label": "A Balsa"},
-      "end":   {"lat": 42.518393, "lng": -7.648482, "label": "O Mosteiro"},
+      "end":   {"lat": 42.767692, "lng": -7.451236, "label": "O Mosteiro"},
       "progress_km": 667
     },
     {

@@ -1,24 +1,24 @@
 {
   "current": {
-    "date": "2025-09-27",
-    "lat": 42.825330,
-    "lng": -7.696141,
-    "label": "Gonzar - Sep 27",
+    "date": "2025-09-30",
+    "lat": 42.905941,
+    "lng": -8.393466,
+    "label": "O Amenal - Sep 30",
     "photo": "https://raw.githubusercontent.com/tjsanzen/assets/main/anna-face.png",
-    "progress_km": 692.5
+    "progress_km": 760.7
   },
   "days": [
    {
       "date": "2025-10-01",
-      "start": {"lat": 42.917072, "lng": -8.332210, "label": "Santa Irene"},
+      "start": {"lat": 42.905941, "lng": -8.393466, "label": "O Amenal"},
       "end":   {"lat": 42.872776, "lng": -8.547002, "label": "Santiago de Compostela"},
       "progress_km": 777
     },
     {
       "date": "2025-09-30",
       "start": {"lat": 42.938425, "lng": -8.154983, "label": "Ribadiso"},
-      "end":   {"lat": 42.917072, "lng": -8.332210, "label": "Santa Irene"},
-      "progress_km": 754.5
+      "end":   {"lat": 42.905941, "lng": -8.393466, "label": "O Amenal"},
+      "progress_km": 760.7
     },
     {
       "date": "2025-09-29",

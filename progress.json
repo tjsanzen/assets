@@ -12,7 +12,7 @@
       "date": "2025-10-08",
       "start": {"lat": 42.872776, "lng": -8.547002, "label": "Santiago de Compostela"},
       "end":   {"lat": 42.909510, "lng": -8.734762, "label": "Negreira"},
-      "progress_km": 777
+      "progress_km": 798
     },
     {
       "date": "2025-10-01",

@@ -1,14 +1,20 @@
 {
   "current": {
-    "date": "2025-10-01",
-    "lat": 42.872776,
-    "lng": -8.547002,
-    "label": "Santiago de Compostela - Oct 01",
+    "date": "2025-10-08",
+    "lat": 42.909510,
+    "lng": -8.734762,
+    "label": "Negreira - Oct 08",
     "photo": "https://raw.githubusercontent.com/tjsanzen/assets/main/anna-face.png",
-    "progress_km": 777
+    "progress_km": 798
   },
   "days": [
    {
+      "date": "2025-10-08",
+      "start": {"lat": 42.872776, "lng": -8.547002, "label": "Santiago de Compostela"},
+      "end":   {"lat": 42.909510, "lng": -8.734762, "label": "Negreira"},
+      "progress_km": 777
+    },
+    {
       "date": "2025-10-01",
       "start": {"lat": 42.905941, "lng": -8.393466, "label": "O Amenal"},
       "end":   {"lat": 42.872776, "lng": -8.547002, "label": "Santiago de Compostela"},

@@ -1,0 +1,163 @@
+<!-- Only change these -->
+<script>
+  const STAGE_DATE = '2025-09-06';
+  const ZOOM_FACTOR = 0.95; 
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+
+<div id="camino-stage" style="height:360px;border-radius:14px;overflow:hidden"></div>
+
+<style>
+  #camino-stage .leaflet-control-attribution{display:none}
+  /* Allow page to scroll over the map on touch. Prevent pinch-zoom. */
+  #camino-stage .leaflet-container{touch-action: pan-y !important}
+  @media (max-width:640px){ #camino-stage{height:280px} }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tmcw/togeojson@5.8.0/dist/togeojson.umd.js"></script>
+<script>
+(async function(){
+  const el = document.getElementById('camino-stage'); if(!el) return;
+  await new Promise(r => requestAnimationFrame(r)); // ensure layout
+
+  const gpxUrl  = 'https://raw.githubusercontent.com/tjsanzen/assets/main/route.gpx';
+  const jsonUrl = 'https://raw.githubusercontent.com/tjsanzen/assets/main/progress.json';
+  const townsUrl = 'https://raw.githubusercontent.com/tjsanzen/assets/main/towns.json';
+  const DAY     = STAGE_DATE;
+
+  // Locked map
+  const map = L.map(el, {
+    zoomControl:false, attributionControl:false,
+    dragging:false, scrollWheelZoom:false, doubleClickZoom:false,
+    touchZoom:false, boxZoom:false, keyboard:false
+  });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18}).addTo(map);
+
+try{
+    const [gpxTxt, prog] = await Promise.all([
+      fetch(gpxUrl,{cache:'no-store'}).then(r=>r.text()),
+      fetch(jsonUrl,{cache:'no-store'}).then(r=>r.json())
+    ]);
+
+    // GPX -> GeoJSON -> flatten to [[lng,lat],...]
+    const xml = new DOMParser().parseFromString(gpxTxt,'text/xml');
+    const gj  = toGeoJSON.gpx(xml);
+    const parts = [];
+    (gj.features||[]).forEach(f=>{
+      const g=f.geometry; if(!g) return;
+      if(g.type==='LineString') parts.push(g.coordinates);
+      else if(g.type==='MultiLineString') parts.push(...g.coordinates);
+    });
+    const flat = parts.flat();
+
+    // Choose the day
+    const entry = (prog.days||[]).find(d=>d.date===DAY);
+    if(!entry){ map.setView([42.9,-5.0],6); return; }
+
+    const startLL=[+entry.start.lat, +entry.start.lng];
+    const endLL  =[+entry.end.lat,   +entry.end.lng];
+
+    // Helpers
+    const d2=(a,b)=>{const dx=a[0]-b[0],dy=a[1]-b[1];return dx*dx+dy*dy;};
+    const nearest=(coords,[lat,lng])=>{
+      if(!coords.length) return -1;
+      let k=0,b=Infinity;
+      for(let i=0;i<coords.length;i++){
+        const dd=d2([coords[i][1],coords[i][0]],[lat,lng]);
+        if(dd<b){b=dd;k=i;}
+      }
+      return k;
+    };
+
+    const CAMINO_BLUE = '#1b479d';
+
+    // Lines
+    let bounds, centerLL, z, iStart=-1, iEnd=-1;
+    if (flat.length >= 2){
+      iStart = nearest(flat,startLL);
+      iEnd   = nearest(flat,endLL);
+      if (iStart >= 0 && iEnd >= 0){
+        if (iEnd < iStart){ const t=iStart; iStart=iEnd; iEnd=t; }
+
+        // Trail from route start up to end-of-day (continues backward toward SJPdP)
+        if (iEnd >= 1){
+          const upTo = flat.slice(0, iEnd+1).map(([lng,lat])=>[lat,lng]);
+          if (upTo.length >= 2) L.polyline(upTo,{color:CAMINO_BLUE,weight:3,opacity:0.55}).addTo(map);
+        }
+
+        // Day segment (bold blue)
+        const seg = flat.slice(iStart, iEnd+1).map(([lng,lat])=>[lat,lng]);
+        if (seg.length >= 2){
+          const dayLine = L.polyline(seg,{color:CAMINO_BLUE,weight:5,opacity:1}).addTo(map);
+          bounds   = dayLine.getBounds();
+          centerLL = bounds.getCenter();
+        }
+      }
+    }
+
+    // Towns on this day's segment
+    try{
+      const townsData = await fetch(townsUrl,{cache:'no-store'}).then(r=>r.json());
+      const towns = (townsData.towns||[]);
+      const onSegment = (t) => {
+        const idx = nearest(flat, [t.lat, t.lng]);
+        if(idx < 0) return false;
+        if(!(idx >= iStart && idx <= iEnd)) return false;
+        // ~600 m threshold
+        const dLng = flat[idx][0]-t.lng, dLat = flat[idx][1]-t.lat;
+        return Math.hypot(dLng, dLat) < 0.006;
+      };
+      towns.filter(onSegment).forEach(t=>{
+        L.circleMarker([t.lat,t.lng],{
+          radius:4, weight:2, color:'#333', fillColor:'#fff', fillOpacity:1
+        })
+       .bindTooltip(t.name,{permanent:false, direction:'top', offset:[0,-8], opacity:0.9})
+        .addTo(map);
+
+
+        
+      });
+    }catch{}
+
+    // Fallback straight line if slice failed
+    if (!bounds || !bounds.isValid()){
+      const line = L.polyline([startLL,endLL],{color:CAMINO_BLUE,weight:5,opacity:1}).addTo(map);
+      bounds   = line.getBounds();
+      centerLL = bounds.getCenter();
+    }
+
+    // Start marker: larger contrasting circle
+    L.circleMarker(startLL, {
+      radius: 10, weight: 3,
+      color: '#996c00', fillColor: '#ffd60a', fillOpacity: 1
+    }).bindTooltip(entry.start.label||'Start').addTo(map);
+
+    // End marker: larger face pin with pointer
+    const imgSrc = (prog.current && prog.current.photo) || 'https://raw.githubusercontent.com/tjsanzen/assets/main/together.png';
+    const endHtml = `<div class="pin" style="position:relative;width:56px;height:56px">
+      <img src="${imgSrc}" style="width:56px;height:56px;border-radius:50%;object-fit:cover;background:#fff;border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);display:block">
+      <span style="position:absolute;left:50%;transform:translateX(-50%);bottom:-12px;width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:12px solid #fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.35))"></span>
+    </div>`;
+    const endIcon = L.divIcon({className:'face-pin', html:endHtml, iconSize:[56,68], iconAnchor:[28,68], popupAnchor:[0,-72]});
+    L.marker(endLL, {icon:endIcon}).bindTooltip(entry.end.label||'End').addTo(map);
+
+    // Fit once, then lock and keep centered on mobile resizes
+    map.fitBounds(bounds,{padding:[20,20]});
+    z = map.getZoom() * ZOOM_FACTOR;
+    map.setView(centerLL, z);
+    map.setMinZoom(z); map.setMaxZoom(z);
+
+    const lockView = () => map.setView(centerLL, z, {animate:false});
+    window.addEventListener('resize', () => { map.invalidateSize(); lockView(); }, {passive:true});
+    window.addEventListener('orientationchange', () => setTimeout(() => { map.invalidateSize(); lockView(); }, 80));
+    new ResizeObserver(() => { map.invalidateSize(); lockView(); }).observe(el);
+  }catch(e){
+    console.warn('Stage widget load failed', e);
+    map.setView([42.9,-5.0],6);
+    const z0 = map.getZoom(); map.setMinZoom(z0); map.setMaxZoom(z0);
+  }
+})();
+</script>

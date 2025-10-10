@@ -2,6 +2,7 @@
 <script>
   const STAGE_DATE = '2025-09-06';
   const ZOOM_FACTOR = 0.95; 
+  window.CAMINO_PHOTO='https://raw.githubusercontent.com/tjsanzen/assets/main/together.png'
 </script>
 
 
@@ -136,7 +137,15 @@ try{
     }).bindTooltip(entry.start.label||'Start').addTo(map);
 
     // End marker: larger face pin with pointer
-    const imgSrc = (prog.current && prog.current.photo) || 'https://raw.githubusercontent.com/tjsanzen/assets/main/together.png';
+    
+// Allow override via URL or manual variable
+const DEFAULT_PHOTO = 'https://raw.githubusercontent.com/tjsanzen/assets/main/anna-face.png';
+const PARAM_PHOTO = new URLSearchParams(location.search).get('photo');
+const CUSTOM_PHOTO = window.CAMINO_PHOTO || PARAM_PHOTO;
+const imgSrc = (prog.current && prog.current.photo) || CUSTOM_PHOTO || DEFAULT_PHOTO;
+
+
+
     const endHtml = `<div class="pin" style="position:relative;width:56px;height:56px">
       <img src="${imgSrc}" style="width:56px;height:56px;border-radius:50%;object-fit:cover;background:#fff;border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);display:block">
       <span style="position:absolute;left:50%;transform:translateX(-50%);bottom:-12px;width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:12px solid #fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.35))"></span>

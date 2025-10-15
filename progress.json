@@ -5,14 +5,14 @@
     "lng": -9.274004,
     "label": "Cape Finisterre - Oct 11",
     "photo": "https://raw.githubusercontent.com/tjsanzen/assets/main/anna-face.png",
-    "progress_km": 867
+    "progress_km": 864
   },
   "days": [
     {
       "date": "2025-10-11",
       "start": {"lat": 42.952168, "lng": -9.187009, "label": "Cee"},
       "end":   {"lat": 42.881911, "lng": -9.274004, "label": "Cape Finisterre"},
-      "progress_km": 867
+      "progress_km": 864
     },
     {
       "date": "2025-10-10",
